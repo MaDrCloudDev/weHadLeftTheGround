@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <link rel="stylesheet" href="index.css">
 		<title>Some color? | MaDr</title>
 	</head>
-	<body data-new-gr-c-s-check-loaded="10" data-gr-ext-installed="" cz-shortcut-listen="true">
+	<body data-new-gr-c-s-check-loaded="9" data-gr-ext-installed="" cz-shortcut-listen="true">
 		<main class="panels">
 			<div class="panel panel1">
 				<p>Are</p>
@@ -32,6 +31,106 @@
 				<p>, a Memory...</p>
 			</div>
 		</main>
-<script src="index.js"></script>
+<script>
+const panels = document.querySelectorAll('.panel');
+	function toggleOpen() {
+    this.classList.toggle('open');
+}
+
+function toggleActive(e) {
+    console.log(e.propertyName);
+    if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+    }
+}
+
+panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+</script>
 	</body>
 </html>
+<style>
+	html{
+    background-color: black;
+    box-sizing:border-box;
+    font-size:1em;
+    font-weight:300
+}
+body{
+    margin:0
+}
+*,:after,:before{
+    box-sizing:inherit
+}
+.panels{
+    min-height:99vh;
+    overflow:hidden;
+    display:flex
+}
+.panel{
+    box-shadow:inset 0 0 0 8px rgba(255, 255, 255, 0.110);
+    color:white;
+    text-align:center;
+    align-items:center;
+    transition:font-size .6s cubic-bezier(.6,-.2,.8,-.1),flex .6s cubic-bezier(.6,-.2,.8,-.1),background .4s;
+    background-size:cover;
+    background-position:center;
+    flex:1;
+    justify-content:center;
+    display:flex;
+    flex-direction:column
+}
+.panel1{
+    background-image:url(img1.webp)
+}
+.panel2{
+    background-image:url(img2.webp)
+}
+.panel3{
+    background-image:url(img3.webp)
+}
+.panel4{
+    background-image:url(img4.webp)
+}
+.panel5{
+    background-image:url(img5.webp)
+}
+.panel>*{
+    margin:0;
+    width:99%;
+    transition:transform .4s;
+    flex:1 0 auto;
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+.panel>:first-child{
+    transform:translateY(-99%)
+}
+.panel.open-active>:first-child{
+    transform:translateY(0)
+}
+.panel>:last-child{
+    transform:translateY(99%)
+}
+.panel.open-active>:last-child{
+    transform:translateY(0)
+}
+.panel p{
+    text-transform:uppercase;
+    text-shadow:0 0 8px rgba(0,0,0,.68),0 0 18px rgba(0,0,0,.48);
+    font-size:2em
+}
+.panel p:nth-child(2){
+    font-size:4em
+}
+.panel.open{
+    flex:5;
+    font-size:40px
+}
+@media only screen and (max-width:600px){
+    .panel p{
+        font-size:1em
+    }
+}
+</style>
