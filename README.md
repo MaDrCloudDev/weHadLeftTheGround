@@ -1,4 +1,4 @@
 # someColor
 [Some Color?](https://MaDr.blog) 
-Copyright (c) 2022 Matthew Drish, MaDr, [MaDrCloudDev](https://github.com/MaDrCloudDev)
+Copyright © 2022 [Matthew Drish](https://MatthewDrish.com), [MaDr](https://MaDr.io), [MaDrCloudDev](https://github.com/MaDrCloudDev)
 
