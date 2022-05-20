@@ -50,8 +50,8 @@ panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 	html{
     background-color: black;
     box-sizing:border-box;
-    font-size:.65em;
-    font-weight:300
+    font-size:.6em;
+    font-weight:200
 }
 body{
     margin:0
@@ -72,7 +72,7 @@ body{
     transition:font-size .6s cubic-bezier(.4,-.1,.6,-.1),flex .6s cubic-bezier(.4,-.1,.6,-.1),background .4s;
     background-size:cover;
     background-position:center;
-    flex:1;
+    flex:4;
     justify-content:center;
     display:flex;
     flex-direction:column
@@ -123,7 +123,7 @@ body{
 }
 .panel.open{
     flex:5;
-    font-size:40px
+    font-size:2em
 }
 @media only screen and (max-width:600px){
     .panel p{
