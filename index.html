@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>someColor? CSS+JS poem.</title>
-  <link rel="stylesheet" href="./style.css">
 </head>
-<body>
 <body>
   <main class="panels">
     <div class="panel panel1">
@@ -34,8 +32,8 @@
       <p>, a Memory...</p>
     </div>
   </main>
-</body>
-  <script>let panels = document.querySelectorAll(".panel");
+  <script>
+  let panels = document.querySelectorAll(".panel");
     function toggleOpen() {
       this.classList.toggle("open");
     }
@@ -47,7 +45,8 @@
     panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
     panels.forEach((panel) =>
       panel.addEventListener("transitionend", toggleActive)
-    );</script>
+    );
+    </script>
 </body>
 </html>
 <style>
