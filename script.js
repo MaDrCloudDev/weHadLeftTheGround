@@ -11,4 +11,3 @@ panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
 panels.forEach((panel) =>
   panel.addEventListener("transitionend", toggleActive)
 );
- // Copyright © 2022 Matthew Drish MaDrCloudDev https://MaDr.io , https://github.com/MaDrCloudDev //
