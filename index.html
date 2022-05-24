@@ -32,7 +32,8 @@
       <p>, a Memory...</p>
     </div>
   </main>
-  <script>
+</body>
+<script>
   let panels = document.querySelectorAll(".panel");
     function toggleOpen() {
       this.classList.toggle("open");
@@ -46,8 +47,7 @@
     panels.forEach((panel) =>
       panel.addEventListener("transitionend", toggleActive)
     );
-    </script>
-</body>
+</script>
 </html>
 <style>
 html {
