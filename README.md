@@ -1,4 +1,3 @@
-# someColor
-## [Some Color?](https://MaDr.blog) 
+# [Some Color?](https://MaDr.blog) 
 ## A  CSS + JS poem.
-### [CodePen](https://codepen.io/madrclouddev/pen/vYdeQbK) 
+## [CodePen](https://codepen.io/madrclouddev/pen/vYdeQbK) 
