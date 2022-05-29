@@ -26,7 +26,7 @@
     <div class="column column5">
       <p>The</p>
       <p>Ground</p>
-      <p>, a Memory...</p>
+      <p>, a Memory.</p>
     </div>
   </main>
 </body>
@@ -48,14 +48,15 @@
 </html>
 <style>
 html {
-  font-size: 1em;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 200;
   color: white;
 }
 body {
   cursor: pointer;
   margin: 0;
   display: flexbox;
+  overflow: hidden;
 }
 .columns {
   min-height: 100vh;
@@ -64,8 +65,8 @@ body {
 }
 .column {
   box-shadow: inset 0 0 0 .6rem rgba(255, 255, 255, 0.12);
-  transition: font-size 0.46s cubic-bezier(0.6, -0.3, 0.6, -0.3),
-    flex 0.46s cubic-bezier(0.6, -0.3, 0.6, -0.3);
+  transition: font-size 0.4s cubic-bezier(0.3, -0.1, 0.3, -0.3),
+    flex 0.4s cubic-bezier(0.3, -0.3, 0.3, -0.3);
   background-size: cover;
   background-position: center;
   flex: 3;
@@ -89,8 +90,8 @@ body {
 }
 .column > * {
   width: 100%;
-  transition: transform 0.4s;
-  flex: 1 1 auto;
+  transition: transform 0.3s;
+  flex: 1 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,19 +110,19 @@ body {
 }
 .column p {
   text-transform: uppercase;
-  text-shadow: 0 0 1em rgba(0, 0, 0, 0.8), 0 0 2em rgba(0, 0, 0, 0.6);
-  font-size: 1.8em;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8), 0 0 2rem rgba(0, 0, 0, 0.6);
+  font-size: 1.3em;
 }
 .column p:nth-child(2) {
-  font-size: 2.0em;
+  font-size: 1.4em;
 }
 .column.open {
-  flex: 6;
-  font-size: 2.0em;
+  flex: 5;
+  font-size: 1.5em;
 }
 @media only screen and (max-width: 600px) {
   .column p {
-    font-size: 1em;
+    font-size: 1.6em;
   }
 }
 </style>
