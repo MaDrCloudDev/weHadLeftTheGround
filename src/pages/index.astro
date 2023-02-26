@@ -1,83 +1,53 @@
 ---
+import Container from "../layouts/Container.astro";
 ---
 
-<html lang='en'>
-	<head>
-		<meta charset='utf-8' />
-		<link
-			rel='icon'
-			type='image/svg'
-			sizes='any'
-			href='https://raw.githubusercontent.com/MaDrCloudDev/projectsImages/master/MaDrLogo.svg'
-		/>
-		<meta
-			name='viewport'
-			content='width=device-width'
-		/>
-		<meta
-			name='generator'
-			content={Astro.generator}
-		/>
-		<title>weHadLeftTheGround | MaDr</title>
-		<script>
-			const columns = document.querySelectorAll(".column");
-			function toggleOpen(this: any) {
-				this.classList.toggle("open");
+<Container>
+	<main class='columns'>
+		<div class='column column1'>
+			<p>Are</p>
+			<p>We</p>
+			<p>Ready?</p>
+		</div>
+		<div class='column column2'>
+			<p>I</p>
+			<p>Had</p>
+			<p>Thought.</p>
+		</div>
+		<div class='column column3'>
+			<p>Flap</p>
+			<p>Left</p>
+			<p>, ...Right.</p>
+		</div>
+		<div class='column column4'>
+			<p>Take</p>
+			<p>The</p>
+			<p>Leap.</p>
+		</div>
+		<div class='column column5'>
+			<p>The</p>
+			<p>Ground</p>
+			<p>, a Memory.</p>
+		</div>
+	</main>
+	<script>
+		const columns = document.querySelectorAll(".column");
+		function toggleOpen(this: any) {
+			this.classList.toggle("open");
+		}
+		function toggleActive(this: any, e: { propertyName: string | string[] }) {
+			if (e.propertyName.includes("flex")) {
+				this.classList.toggle("open-active");
 			}
-			function toggleActive(this: any, e: { propertyName: string | string[] }) {
-				if (e.propertyName.includes("flex")) {
-					this.classList.toggle("open-active");
-				}
-			}
-			columns.forEach((column) => column.addEventListener("click", toggleOpen));
-			columns.forEach((column) =>
-				column.addEventListener("transitionend", toggleActive)
-			);
-		</script>
-	</head>
-	<body>
-		<main class='columns'>
-			<div class='column column1'>
-				<p>Are</p>
-				<p>We</p>
-				<p>Ready?</p>
-			</div>
-			<div class='column column2'>
-				<p>I</p>
-				<p>Had</p>
-				<p>Thought.</p>
-			</div>
-			<div class='column column3'>
-				<p>Flap</p>
-				<p>Left</p>
-				<p>, ...Right.</p>
-			</div>
-			<div class='column column4'>
-				<p>Take</p>
-				<p>The</p>
-				<p>Leap.</p>
-			</div>
-			<div class='column column5'>
-				<p>The</p>
-				<p>Ground</p>
-				<p>, a Memory.</p>
-			</div>
-		</main>
-	</body>
-</html>
+		}
+		columns.forEach((column) => column.addEventListener("click", toggleOpen));
+		columns.forEach((column) =>
+			column.addEventListener("transitionend", toggleActive)
+		);
+	</script>
+</Container>
 
 <style>
-	html {
-		font-size: 1.2rem;
-		font-weight: 200;
-		color: white;
-	}
-	body {
-		cursor: pointer;
-		margin: 0;
-		display: flexbox;
-		overflow: hidden;
-	}
 	.columns {
 		min-height: 100vh;
 		overflow: hidden;
