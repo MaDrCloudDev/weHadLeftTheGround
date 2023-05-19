@@ -1,5 +1,5 @@
 ---
-import Container from "../layouts/Container.astro";
+import Container from '../layouts/Container.astro';
 ---
 
 <Container>
@@ -31,18 +31,18 @@ import Container from "../layouts/Container.astro";
 		</div>
 	</main>
 	<script>
-		const columns = document.querySelectorAll(".column");
+		const columns = document.querySelectorAll('.column');
 		function toggleOpen(this: any) {
-			this.classList.toggle("open");
+			this.classList.toggle('open');
 		}
 		function toggleActive(this: any, e: { propertyName: string | string[] }) {
-			if (e.propertyName.includes("flex")) {
-				this.classList.toggle("open-active");
+			if (e.propertyName.includes('flex')) {
+				this.classList.toggle('open-active');
 			}
 		}
-		columns.forEach((column) => column.addEventListener("click", toggleOpen));
+		columns.forEach((column) => column.addEventListener('click', toggleOpen));
 		columns.forEach((column) =>
-			column.addEventListener("transitionend", toggleActive)
+			column.addEventListener('transitionend', toggleActive)
 		);
 	</script>
 </Container>
@@ -50,7 +50,7 @@ import Container from "../layouts/Container.astro";
 <style>
 	body {
 		font-size: 1.2rem;
-		font-weight: 200;
+		font-weight: 500;
 		color: white;
 		cursor: pointer;
 		margin: 0;
@@ -63,7 +63,7 @@ import Container from "../layouts/Container.astro";
 		display: flex;
 	}
 	.column {
-		box-shadow: inset 0 0 0 0.4rem rgba(255, 255, 255, 0.12);
+		box-shadow: inset 0 0 0 0.4rem rgba(255, 255, 255, 0.33);
 		transition: font-size 0.4s cubic-bezier(0.3, -0.1, 0.3, -0.3),
 			flex 0.4s cubic-bezier(0.3, -0.3, 0.3, -0.3);
 		background-size: cover;
