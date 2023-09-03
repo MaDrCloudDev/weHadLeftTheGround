@@ -1,7 +1,7 @@
 # [weHadLeftTheGround](https://wehadlefttheground.MaDr.io) (desktop only)
 My open-source, interactive CSS + JS poem
 ### I've moved the project into Astro to make it easier to manage and manipulate, but it can still be used as a single-page HTML file by referencing [index.astro](https://github.com/MaDrCloudDev/weHadLeftTheGround/blob/main/src/pages/index.astro). Just replace the \<Container> HTML element with a \<body> element.
-#### You can also just run it in Asro:
+#### Run it in Asro:
 ```
 npm i
 npm run dev
