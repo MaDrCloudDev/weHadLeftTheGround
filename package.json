@@ -1,19 +1,15 @@
 {
-	"name": "wehadlefttheground-madrclouddev",
-	"type": "module",
-	"version": "0.9.9",
-	"description": "We had left the ground",
-	"author": "MaDrCloudDev",
-	"license": "MIT",
-	"website": "https://wehadlefttheground.madr.io/",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"astro": "^2.4.1"
-	}
+  "name": "poem-update",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^3.1.1"
+  }
 }
