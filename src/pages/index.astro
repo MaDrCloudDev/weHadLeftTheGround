@@ -1,48 +1,48 @@
 ---
-import Container from '../layouts/Container.astro';
+import Container from "../layouts/Container.astro";
 ---
 
 <Container>
-	<main class='columns'>
-		<div class='column column1'>
-			<p>Are</p>
-			<p>We</p>
-			<p>Ready?</p>
-		</div>
-		<div class='column column2'>
-			<p>I</p>
-			<p>Had</p>
-			<p>Thought.</p>
-		</div>
-		<div class='column column3'>
-			<p>Flap</p>
-			<p>Left</p>
-			<p>, ...Right.</p>
-		</div>
-		<div class='column column4'>
-			<p>Take</p>
-			<p>The</p>
-			<p>Leap.</p>
-		</div>
-		<div class='column column5'>
-			<p>The</p>
-			<p>Ground</p>
-			<p>, a Memory.</p>
-		</div>
-	</main>
-	<script>
-		const columns = document.querySelectorAll('.column');
-		function toggleOpen(this: any) {
-			this.classList.toggle('open');
-		}
-		function toggleActive(this: any, e: { propertyName: string | string[] }) {
-			if (e.propertyName.includes('flex')) {
-				this.classList.toggle('open-active');
-			}
-		}
-		columns.forEach((column) => column.addEventListener('click', toggleOpen));
-		columns.forEach((column) =>
-			column.addEventListener('transitionend', toggleActive)
-		);
-	</script>
+  <main class="columns">
+    <div class="column column1">
+      <p>Are</p>
+      <p>We</p>
+      <p>Ready?</p>
+    </div>
+    <div class="column column2">
+      <p>I</p>
+      <p>Had</p>
+      <p>Thought.</p>
+    </div>
+    <div class="column column3">
+      <p>Flap</p>
+      <p>Left</p>
+      <p>, ...Right.</p>
+    </div>
+    <div class="column column4">
+      <p>Take</p>
+      <p>The</p>
+      <p>Leap.</p>
+    </div>
+    <div class="column column5">
+      <p>The</p>
+      <p>Ground</p>
+      <p>, a Memory.</p>
+    </div>
+  </main>
+  <script>
+    const columns = document.querySelectorAll(".column");
+    function toggleOpen(this: any) {
+      this.classList.toggle("open");
+    }
+    function toggleActive(this: any, e: { propertyName: string | string[] }) {
+      if (e.propertyName.includes("flex")) {
+        this.classList.toggle("open-active");
+      }
+    }
+    columns.forEach((column) => column.addEventListener("click", toggleOpen));
+    columns.forEach((column) =>
+      column.addEventListener("transitionend", toggleActive)
+    );
+  </script>
 </Container>
