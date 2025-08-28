@@ -1,48 +1,162 @@
----
-import Container from "../layouts/Container.astro";
----
-
-<Container>
-  <main class="columns">
-    <div class="column column1">
-      <p>Are</p>
-      <p>We</p>
-      <p>Ready?</p>
-    </div>
-    <div class="column column2">
-      <p>I</p>
-      <p>Had</p>
-      <p>Thought.</p>
-    </div>
-    <div class="column column3">
-      <p>Flap</p>
-      <p>Left</p>
-      <p>, ...Right.</p>
-    </div>
-    <div class="column column4">
-      <p>Take</p>
-      <p>The</p>
-      <p>Leap.</p>
-    </div>
-    <div class="column column5">
-      <p>The</p>
-      <p>Ground</p>
-      <p>, a Memory.</p>
-    </div>
-  </main>
-  <script>
-    const columns = document.querySelectorAll(".column");
-    function toggleOpen(this: any) {
-      this.classList.toggle("open");
-    }
-    function toggleActive(this: any, e: { propertyName: string | string[] }) {
-      if (e.propertyName.includes("flex")) {
-        this.classList.toggle("open-active");
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://raw.githubusercontent.com/MaDrCloudDev/projectsImages/master/MaDrLogo.svg"
+    />
+    <title>weHadLeftTheGround | MaDr</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
-    columns.forEach((column) => column.addEventListener("click", toggleOpen));
-    columns.forEach((column) =>
-      column.addEventListener("transitionend", toggleActive)
-    );
-  </script>
-</Container>
+
+      body {
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+        cursor: pointer;
+        overflow: hidden;
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .columns {
+        display: flex;
+        flex: 1;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .column {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 0 0 0.4rem rgba(255, 255, 255, 0.6);
+        transition:
+          flex 0.4s cubic-bezier(0.3, -0.1, 0.3, -0.3),
+          font-size 0.4s cubic-bezier(0.3, -0.1, 0.3, -0.3);
+      }
+
+      .column1 {
+        background-image: url(https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014618_960_720.jpg);
+      }
+
+      .column2 {
+        background-image: url(https://cdn.pixabay.com/photo/2020/01/30/21/24/shop-4806610_960_720.jpg);
+      }
+
+      .column3 {
+        background-image: url(https://cdn.pixabay.com/photo/2020/06/17/17/07/downtown-5310440_960_720.jpg);
+      }
+
+      .column4 {
+        background-image: url(https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014617_960_720.jpg);
+      }
+
+      .column5 {
+        background-image: url(https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014619_960_720.jpg);
+      }
+
+      .column p {
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        text-shadow:
+          0 0 1em rgba(0, 0, 0, 0.8),
+          0 0 2em rgba(0, 0, 0, 0.6);
+        font-size: 1.3em;
+        transition: transform 0.3s;
+      }
+
+      .column p:nth-child(2) {
+        font-size: 1.4em;
+      }
+
+      .column p:first-child {
+        transform: translateY(-100%);
+      }
+
+      .column.open-active p:first-child {
+        transform: translateY(0);
+      }
+
+      .column p:last-child {
+        transform: translateY(100%);
+      }
+
+      .column.open-active p:last-child {
+        transform: translateY(0);
+      }
+
+      .column.open {
+        flex: 5;
+        font-size: 1.5em;
+      }
+
+      @media (max-width: 600px) {
+        .column p {
+          font-size: 1.6em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="columns">
+      <div class="column column1">
+        <p>Are</p>
+        <p>We</p>
+        <p>Ready?</p>
+      </div>
+      <div class="column column2">
+        <p>I</p>
+        <p>Had</p>
+        <p>Thought.</p>
+      </div>
+      <div class="column column3">
+        <p>Flap</p>
+        <p>Left</p>
+        <p>, ...Right.</p>
+      </div>
+      <div class="column column4">
+        <p>Take</p>
+        <p>The</p>
+        <p>Leap.</p>
+      </div>
+      <div class="column column5">
+        <p>The</p>
+        <p>Ground</p>
+        <p>, a Memory.</p>
+      </div>
+    </main>
+    <script>
+      const columns = document.querySelectorAll(".column");
+
+      columns.forEach((column) => {
+        column.addEventListener("click", function (this: HTMLDivElement) {
+          this.classList.toggle("open");
+        });
+
+        column.addEventListener(
+          "transitionend",
+          function (this: HTMLDivElement, e) {
+            const event = e as TransitionEvent;
+            if (event.propertyName.includes("flex")) {
+              this.classList.toggle("open-active");
+            }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
